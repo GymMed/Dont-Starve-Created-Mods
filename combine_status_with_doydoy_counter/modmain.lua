@@ -55,8 +55,8 @@ local function Doydoycount(inst)
 	inst:ListenForEvent("onremove", function(inst)
 		DOYDOY_COUNTER = DOYDOY_COUNTER - 1
 		--print(tostring(DOYDOY_COUNTER))
-		CountPrefab("doydoy")
-		CountPrefab("doydoybaby")
+		--CountPrefab("doydoy")
+		--CountPrefab("doydoybaby")
 	end)
 end
 
