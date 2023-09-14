@@ -3,11 +3,6 @@ local Wormhole_Marks = Class(function(self, inst)
 	self.marked = false
 	self.wormhole_number = nil
 		
-	local playercheck = GetPlayer()
-	if playercheck then
-		local character_name = playercheck.prefab
-		print("Player character's name: " .. character_name)
-	end
 end)
 
 function Wormhole_Marks:MarkEntrance()
@@ -32,13 +27,11 @@ function Wormhole_Marks:GetNumber()
     if wormhole_counter then
         self.wormhole_number = wormhole_counter:Get()
     else
+		-- Handle the case where the wormhole_counter component doesn't exist
 		local Wormhole_Counter_Class = require("components/wormhole_counter")
 		GetWorld().components.wormhole_counter = Wormhole_Counter_Class()
         wormhole_counter = GetWorld().components.wormhole_counter
         self.wormhole_number = wormhole_counter:Get()
-        -- Handle the case where the wormhole_counter component doesn't exist
-        --self.wormhole_number = 1
-		print("wormhole_number = Wormhole_Counter_Class")
     end
 end
 

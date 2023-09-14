@@ -164,7 +164,6 @@ if DLC then
 
 	function ForestPrefabPostInit(inst)
 		inst:AddComponent("wormhole_counter")
-		print("ForestPrefabPostInit 1 ")
 	end
 
 	AddPrefabPostInit("forest", ForestPrefabPostInit)
@@ -244,7 +243,6 @@ else
 
 	function ForestPrefabPostInit(inst)
 		inst:AddComponent("wormhole_counter")
-		print("ForestPrefabPostInit 2")
 	end
 	
 	AddPrefabPostInit("forest", ForestPrefabPostInit)
