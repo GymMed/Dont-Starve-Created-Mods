@@ -67,7 +67,7 @@ local function CountPrefab(prefab)
             count = count + 1
         end
     end
-    print("prefab passed(" .. tostring(prefab) .. ") count = " .. tostring(count))
+    --print("prefab passed(" .. tostring(prefab) .. ") count = " .. tostring(count))
     return count
 end
 
@@ -590,15 +590,15 @@ local function StatusPostConstruct(self)
 		local function UpdateDoydoysNum()
 			self.doydoys.num:SetString(	(DOYDOY_COUNTER) .. "/" ..
 											(TUNING.DOYDOY_MAX_POPULATION) 			)
-											CountPrefab("doydoy")
-											CountPrefab("doydoybaby")
+											--CountPrefab("doydoy")
+											--CountPrefab("doydoybaby")
 											--print("doydoybabyc " .. tostring(c_countprefabs("doydoybaby") .. " doydoyc " .. tostring(c_countprefabs("doydoy"))))
 		end
 		self.doydoys:SetPosition(65.5, 0)
 		self.doydoys.bg:SetScale(.55, .43, 1)
 		--Old Method that show stats too slowly
 		--self.inst:ListenForEvent("temperaturedelta", UpdateDoydoysNum, self.owner)
-		self.inst:DoPeriodicTask(0, UpdateDoydoysNum)
+		self.inst:DoPeriodicTask(1, UpdateDoydoysNum)
 		if SHOWTEMPBADGES then
 			self.doydoybadge = self:AddChild(PlayerBadge(self.owner.prefab, {80/255, 60/255, 30/255, 1}, {atlas="images/doydoybaby.xml", image="doydoybaby.tex"}))
 			self.doydoybadge:SetScale(0.35, 0.35, 1)
